@@ -1,0 +1,24 @@
+{
+    "app": {
+      "object": {
+        "person": {},
+        "machine": {},
+        "trash": {}
+      },
+      "behavior": {
+        "violations": {},
+        "systemchanges": {},
+        "trends": {}
+      },
+      "entity": {
+        "assets": {},
+        "spaces": {},
+        "environment": {}
+      },
+      "ioc": {
+        "incident": {},
+        "safety": {},
+        "qualitycontrol": {}
+      }
+    }
+  }

@@ -1,0 +1,4 @@
+global-include *.txt *.py *.md VERSION *License LICENSE
+recursive-include src *.py
+recursive-include src *.json
+recursive-include src *.yaml
