@@ -6,5 +6,4 @@ from enum import Enum
 class NamingClassEnum(str, Enum):
     """pre-defined value for naming classes used
     """
-    YOLO_OBJECTS="yolo_categorymapping.objects"
-    
+    YOLO_OBJECTS="YOLO"

@@ -1,0 +1,204 @@
+{
+    "$defs": {
+        "AnalyticsSubject": {
+            "description": "Represent analytics subject\n    ",
+            "properties": {
+                "analyticsSubjectId": {
+                    "title": "Analyticssubjectid",
+                    "type": "string"
+                },
+                "specs": {
+                    "default": null,
+                    "title": "Specs",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "analyticsSubjectId"
+            ],
+            "title": "AnalyticsSubject",
+            "type": "object"
+        },
+        "ComplianceResultClassEnum": {
+            "description": "Types of detection\n    ",
+            "enum": [
+                "Compliant",
+                "Conformant",
+                "Nonconformant",
+                "None"
+            ],
+            "title": "ComplianceResultClassEnum",
+            "type": "string"
+        },
+        "DetectionModel": {
+            "description": "Capture detection models\n    ",
+            "properties": {
+                "detectionModelRefId": {
+                    "default": null,
+                    "title": "Detectionmodelrefid",
+                    "type": "string"
+                },
+                "detectionModelName": {
+                    "default": null,
+                    "title": "Detectionmodelname",
+                    "type": "string"
+                },
+                "detectionType": {
+                    "$ref": "#/$defs/DetectionTypeClassEnum",
+                    "default": null
+                },
+                "deploymentRefId": {
+                    "default": null,
+                    "title": "Deploymentrefid",
+                    "type": "string"
+                },
+                "deploymentInfo": {
+                    "default": null,
+                    "title": "Deploymentinfo",
+                    "type": "object"
+                },
+                "modelInfo": {
+                    "default": null,
+                    "title": "Modelinfo",
+                    "type": "object"
+                },
+                "complianceCert": {
+                    "$ref": "#/$defs/ModelComplianceDoc",
+                    "default": null
+                }
+            },
+            "title": "DetectionModel",
+            "type": "object"
+        },
+        "DetectionTypeClassEnum": {
+            "description": "Types of detection\n    ",
+            "enum": [
+                "object_detection",
+                "object_recognition",
+                "object_classification",
+                "anomaly_detection"
+            ],
+            "title": "DetectionTypeClassEnum",
+            "type": "string"
+        },
+        "ModelComplianceDoc": {
+            "description": "model compliance doc\n    ",
+            "properties": {
+                "documentId": {
+                    "title": "Documentid",
+                    "type": "string"
+                },
+                "issuanceDate": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "Issuancedate"
+                },
+                "expirationDate": {
+                    "anyOf": [
+                        {
+                            "type": "number"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "title": "Expirationdate"
+                },
+                "issuer": {
+                    "title": "Issuer",
+                    "type": "string"
+                },
+                "holder": {
+                    "title": "Holder",
+                    "type": "string"
+                },
+                "registryId": {
+                    "title": "Registryid",
+                    "type": "string"
+                },
+                "modelId": {
+                    "title": "Modelid",
+                    "type": "string"
+                },
+                "complianceScope": {
+                    "additionalProperties": {
+                        "$ref": "#/$defs/ComplianceResultClassEnum"
+                    },
+                    "propertyNames": {
+                        "$ref": "#/$defs/RegulationClassEnum"
+                    },
+                    "title": "Compliancescope",
+                    "type": "object"
+                },
+                "extra": {
+                    "default": null,
+                    "title": "Extra",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "documentId",
+                "issuanceDate",
+                "expirationDate",
+                "issuer",
+                "holder",
+                "registryId",
+                "modelId",
+                "complianceScope"
+            ],
+            "title": "ModelComplianceDoc",
+            "type": "object"
+        },
+        "RegulationClassEnum": {
+            "description": "Types of detection\n    ",
+            "enum": [
+                "FDA 21 CFR Part 820",
+                "ISO 13485:2016",
+                "ISO 14971:2019",
+                "NIST AI RMF 1.0",
+                "EU AI Act",
+                "ISO 31000",
+                "NIST CSF",
+                "COBIT"
+            ],
+            "title": "RegulationClassEnum",
+            "type": "string"
+        }
+    },
+    "description": "Capture detection configurations\n    ",
+    "properties": {
+        "timestamp": {
+            "title": "Timestamp",
+            "type": "number"
+        },
+        "analyticsSubject": {
+            "$ref": "#/$defs/AnalyticsSubject",
+            "default": null
+        },
+        "domainCategory": {
+            "default": null,
+            "title": "Domaincategory",
+            "type": "string"
+        },
+        "detectionModel": {
+            "$ref": "#/$defs/DetectionModel",
+            "default": null
+        },
+        "config": {
+            "default": null,
+            "title": "Config",
+            "type": "object"
+        }
+    },
+    "required": [
+        "timestamp"
+    ],
+    "title": "DetectionConfig",
+    "type": "object"
+}

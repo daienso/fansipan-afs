@@ -7,7 +7,7 @@ authors = [
   {name="Linh Truong, Nguyen Ngoc Nhu Trang, Daienso Lab", email="contact@daienso.com" },
 ]
 description = "Basic data models of the Analytics Feature Space for ML Detection"
-version = "0.0.1"
+version = "0.0.2"
 readme = "README.md"
 license = {file = "LICENSE"}
 keywords=['python', 'daienso', 'fansipan','afs']
@@ -20,7 +20,10 @@ classifiers = [
 
 dependencies= [
     "pydantic>=2.7.1",
-    "PyYAML>=6.0.1"
+    "PyYAML>=6.0.1",
+    "jsonschema>=4.25.1",
+    "email-validator>=2.3.0",
+    "python-dateutil>=2.9.0.post0",
 ]
 
 [project.optional-dependencies]

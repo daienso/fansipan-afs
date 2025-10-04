@@ -1,4 +1,5 @@
 # Fansipan AFS - Analytics Feature Space for Interoperable Edge Machine Learning Detection
+
 >To be updated
 
 AFS supports integrating multiple ML detections from distributed edges in a unified way to address interoperability and explainability for management and downstream applications.
@@ -22,7 +23,7 @@ These basis schemas can be used for representing and/or enriching detection resu
 To build the package:
 
 ```
-python -m build
+$rye build
 ```
 
 Then check the dist directory to see the package
