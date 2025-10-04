@@ -6,4 +6,5 @@ from enum import Enum
 class NamingClassEnum(str, Enum):
     """pre-defined value for naming classes used
     """
-    YOLO_OBJECTS="YOLO"
+    YOLO_OBJECTS = "YOLO"
+    UCF101_OBJECTS = "UCF101"
